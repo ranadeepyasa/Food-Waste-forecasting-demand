@@ -1,0 +1,5 @@
+model,MAE,RMSE,MAPE
+Historical Mean Baseline,110.18,244.51,86.16
+Linear Regression (Ridge),134.18,247.09,109.9
+Gradient Boosting Regressor,96.85,184.46,86.18
+Random Forest Regressor,97.86,196.89,89.78

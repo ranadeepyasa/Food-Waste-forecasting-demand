@@ -1,0 +1,190 @@
+{
+  "project_id": "ML-T2-003",
+  "project_title": "Food Demand Forecasting Under Changing Conditions",
+  "institution": "Learn Depth Academy LLP - Track 2: Advanced Machine Learning Internship",
+  "dataset_notice": "The Genpact Food Demand Forecasting dataset does not contain weather, holiday, or special event fields. Feature engineering leverages the available contextual and promotional variables without synthesizing non-existent external data.",
+  "total_records": 456548,
+  "split_info": {
+    "train_weeks": "1-101 (101 weeks, 312585 rows)",
+    "val_weeks": "102-123 (22 weeks, 71801 rows)",
+    "test_weeks": "124-145 (22 weeks, 72162 rows)"
+  },
+  "best_model": "Gradient Boosting Regressor",
+  "best_model_metrics": {
+    "MAE": 96.85,
+    "RMSE": 184.46,
+    "MAPE": 86.18
+  },
+  "all_models": [
+    {
+      "model": "Historical Mean Baseline",
+      "MAE": 110.18,
+      "RMSE": 244.51,
+      "MAPE": 86.16
+    },
+    {
+      "model": "Linear Regression (Ridge)",
+      "MAE": 134.18,
+      "RMSE": 247.09,
+      "MAPE": 109.9
+    },
+    {
+      "model": "Gradient Boosting Regressor",
+      "MAE": 96.85,
+      "RMSE": 184.46,
+      "MAPE": 86.18
+    },
+    {
+      "model": "Random Forest Regressor",
+      "MAE": 97.86,
+      "RMSE": 196.89,
+      "MAPE": 89.78
+    }
+  ],
+  "unusual_demand_analysis": {
+    "threshold_percentile": 90.0,
+    "threshold_value": 568.0,
+    "normal_count": 64865,
+    "unusual_count": 7297,
+    "normal_metrics": {
+      "mae": 72.88,
+      "rmse": 106.91,
+      "mape": 92.52
+    },
+    "unusual_metrics": {
+      "mae": 309.91,
+      "rmse": 484.64,
+      "mape": 29.85
+    },
+    "definition": "Unusual demand is defined as actual demand >= 90.0th percentile (568.0 units) in the observed period."
+  },
+  "operational_analysis": {
+    "demonstration_rule": "suggested_preparation = ceil(predicted_demand)",
+    "average_over_preparation": 47.65,
+    "average_shortage": 49.29,
+    "percentage_over_preparation": 58.53,
+    "percentage_shortage": 40.93,
+    "percentage_exact_match": 0.54,
+    "explanation": "Demonstration operational metrics only. They model unit-level buffer differences and do not represent monetary financial loss or actual inventory waste."
+  },
+  "data_quality": {
+    "total_rows": 456548,
+    "total_cols": 20,
+    "missing_values": {
+      "id": 0,
+      "week": 0,
+      "center_id": 0,
+      "meal_id": 0,
+      "checkout_price": 0,
+      "base_price": 0,
+      "emailer_for_promotion": 0,
+      "homepage_featured": 0,
+      "num_orders": 0,
+      "city_code": 0,
+      "region_code": 0,
+      "center_type": 0,
+      "op_area": 0,
+      "category": 0,
+      "cuisine": 0,
+      "week_sin": 0,
+      "week_cos": 0,
+      "price_difference": 0,
+      "discount_ratio": 0,
+      "promotion_any": 0
+    },
+    "duplicate_records": 0,
+    "iqr_outliers_count": 32937,
+    "demand_stats": {
+      "min": 13.0,
+      "max": 24299.0,
+      "mean": 261.87,
+      "median": 136.0,
+      "std": 395.92,
+      "p90": 609.0,
+      "p95": 878.0
+    },
+    "notice": "The Genpact Food Demand Forecasting dataset does not contain weather, holiday, or special event fields. Feature engineering leverages the available contextual and promotional variables without synthesizing non-existent external data."
+  },
+  "top_features": [
+    {
+      "feature": "op_area",
+      "importance": 0.1153
+    },
+    {
+      "feature": "promotion_any",
+      "importance": 0.1147
+    },
+    {
+      "feature": "meal_id_2290",
+      "importance": 0.1113
+    },
+    {
+      "feature": "checkout_price",
+      "importance": 0.1104
+    },
+    {
+      "feature": "base_price",
+      "importance": 0.1019
+    },
+    {
+      "feature": "category_Rice Bowl",
+      "importance": 0.0563
+    },
+    {
+      "feature": "category_Sandwich",
+      "importance": 0.0473
+    },
+    {
+      "feature": "week",
+      "importance": 0.0427
+    },
+    {
+      "feature": "cuisine_Italian",
+      "importance": 0.0248
+    },
+    {
+      "feature": "city_code_590",
+      "importance": 0.0212
+    },
+    {
+      "feature": "price_difference",
+      "importance": 0.0189
+    },
+    {
+      "feature": "discount_ratio",
+      "importance": 0.0179
+    },
+    {
+      "feature": "category_Salad",
+      "importance": 0.0173
+    },
+    {
+      "feature": "week_cos",
+      "importance": 0.0169
+    },
+    {
+      "feature": "meal_id_1885",
+      "importance": 0.0136
+    },
+    {
+      "feature": "region_code_56",
+      "importance": 0.0107
+    },
+    {
+      "feature": "center_id_43",
+      "importance": 0.0106
+    },
+    {
+      "feature": "meal_id_2707",
+      "importance": 0.0104
+    },
+    {
+      "feature": "meal_id_1993",
+      "importance": 0.0097
+    },
+    {
+      "feature": "emailer_for_promotion",
+      "importance": 0.0096
+    }
+  ]
+}
